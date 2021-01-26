@@ -13,13 +13,21 @@ require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/CrystalRepository.php';
 
+
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['DBname']);
 $databaseManager->connect();
 
 // This example is about a Pokémon card collection
 // Update the naming if you'd like to work with another collection
-$cardRepository = new CrystalRepository($databaseManager);
-$crystals = $cardRepository->get();
+$crystalRepository = new CrystalRepository($databaseManager);
+$crystals = $crystalRepository->get();
+
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $zodiac = $_POST['zodiac'];
+    $chakra = $_POST['chakra'];
+    $crystalRepository->create($name, $zodiac, $chakra);
+}
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view

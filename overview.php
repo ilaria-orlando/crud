@@ -22,6 +22,7 @@
                 <td><?= $crystal['name'] ?></td>
                 <td><?= $crystal['zodiac'] ?></td>
                 <td><?= $crystal['chakra']?></td>
+                <td><a href="edit.php?name=<?=$crystal['name']?>&zodiac=<?= $crystal['zodiac'] ?>&chakra=<?= $crystal['chakra']?>&id=<?= $crystal['id']?>">Edit</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
@@ -32,7 +33,7 @@
         <input type="text" name="zodiac"><br>
         <label for="chakra">Assigned chakra:</label>
         <input type="text" name="chakra"><br>
-        <button type="submit">Submit</button>
+        <button type="submit" name="submit">Submit</button>
     </form>
 
 </body>

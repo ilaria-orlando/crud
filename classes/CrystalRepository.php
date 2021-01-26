@@ -13,9 +13,11 @@ class CrystalRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create()
+    public function create($name, $zodiac, $chakra)
     {
-
+        $sql = "INSERT INTO `crystals` (name, zodiac, chakra)
+                VALUES ('$name', '$zodiac', '$chakra')";
+        $this->databaseManager->database->query($sql);
     }
 
     // Get one
@@ -28,7 +30,7 @@ class CrystalRepository
     public function get()
     {
 
-        $sql = "SELECT `name`, `zodiac`, `chakra` FROM `crystals`";
+        $sql = "SELECT `id`, `name`, `zodiac`, `chakra` FROM `crystals`";
         $result = $this->databaseManager -> database -> query($sql);
 
         return $result;
@@ -37,9 +39,10 @@ class CrystalRepository
         // return $this->databaseManager->database-> (runYourQueryHere)
     }
 
-    public function update()
+    public function update($name, $zodiac, $chakra)
     {
-
+        /*$sql=""
+        $this->databaseManager->database->query($sql);*/
     }
 
     public function delete()
