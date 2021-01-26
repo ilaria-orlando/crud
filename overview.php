@@ -9,13 +9,31 @@
 </head>
 <body>
 
-<h1>Crystal code - track your collection of crystals</h1>
+    <h1>Crystal code - track your collection of crystals</h1>
 
-<ul>
-    <?php foreach ($crystals as $crystal) : ?>
-        <li><?= $crystal['name'] ?></li>
-    <?php endforeach; ?>
-</ul>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Zodiac</th>
+            <th>Chakra</th>
+        </tr>
+        <?php foreach ($crystals as $crystal) : ?>
+            <tr>
+                <td><?= $crystal['name'] ?></td>
+                <td><?= $crystal['zodiac'] ?></td>
+                <td><?= $crystal['chakra']?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <form method="post" action="">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name"><br>
+        <label for ="zodiac">Assigned zodiac:</label>
+        <input type="text" name="zodiac"><br>
+        <label for="chakra">Assigned chakra:</label>
+        <input type="text" name="chakra"><br>
+        <button type="submit">Submit</button>
+    </form>
 
 </body>
 </html>

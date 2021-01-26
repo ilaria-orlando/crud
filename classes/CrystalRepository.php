@@ -28,9 +28,8 @@ class CrystalRepository
     public function get()
     {
 
-        $sql = "SELECT `name` FROM `crystals`";
+        $sql = "SELECT `name`, `zodiac`, `chakra` FROM `crystals`";
         $result = $this->databaseManager -> database -> query($sql);
-        // TODO: replace dummy data by real one
 
         return $result;
 
