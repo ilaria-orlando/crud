@@ -23,6 +23,7 @@
                 <td><?= $crystal['zodiac'] ?></td>
                 <td><?= $crystal['chakra']?></td>
                 <td><a href="edit.php?name=<?=$crystal['name']?>&zodiac=<?= $crystal['zodiac'] ?>&chakra=<?= $crystal['chakra']?>&id=<?= $crystal['id']?>">Edit</a></td>
+                <td><a href="delete.php?id=<?= $crystal['id']?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

@@ -30,7 +30,7 @@ class CrystalRepository
     public function get()
     {
 
-        $sql = "SELECT `id`, `name`, `zodiac`, `chakra` FROM `crystals`";
+        $sql = "SELECT * FROM `crystals`";
         $result = $this->databaseManager -> database -> query($sql);
 
         return $result;
@@ -39,15 +39,19 @@ class CrystalRepository
         // return $this->databaseManager->database-> (runYourQueryHere)
     }
 
-    public function update($name, $zodiac, $chakra)
+    public function update(int $id, string $name, string $zodiac, string $chakra)
     {
-        /*$sql=""
-        $this->databaseManager->database->query($sql);*/
+        $sql="UPDATE `crystals` 
+                SET name='$name', zodiac='$zodiac', chakra='$chakra'
+                WHERE id= '$id'";
+        $this->databaseManager->database->query($sql);
     }
 
-    public function delete()
+    public function delete(int $id)
     {
-
+        $sql="DELETE FROM `crystals` WHERE id='$id'";
+        $this->databaseManager->database->query($sql);
     }
+
 
 }

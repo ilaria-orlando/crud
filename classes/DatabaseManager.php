@@ -24,6 +24,7 @@ class DatabaseManager
     public function connect()
     {
         // TODO: make the connection to the database
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $this->database = new mysqli($this->host, $this->name, $this->password, $this->DBname);
     }
 }
